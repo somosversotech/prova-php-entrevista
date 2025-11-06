@@ -1,38 +1,96 @@
-# Teste de conhecimentos PHP + Banco de dados
-##### Objetivo
-Criar um Crud simples, totalmente desenvolvido em PHP, sem a utilização de frameworks, onde será possível Criar/Editar/Excluir/Listar usuários. O sistema também deve possuir a possibilidade de vincular/desvincular várias cores ao usuário.
+# 🧠 Teste de Conhecimentos — PHP + Banco de Dados
 
-##### Estrutura de banco de dados
-A seguinte estrutura será utilizada para persistência dos dados, podendo ser alterada a qualquer momento para melhor funcionamento do sistema:
+## 🎯 Objetivo
 
-```sql
-    tabela: users
-        id      int not null auto_increment primary key
-        name    varchar(100) not null
-        email   varchar(100) not null
+Desenvolver um **CRUD simples em PHP puro**, **sem frameworks**, onde seja possível:
+
+* 👤 Criar, editar, excluir e listar **usuários**
+* 🎨 Criar, editar, excluir e listar **cores**
+* 🎨 Vincular e desvincular **várias cores** a cada usuário
+
+---
+
+## 🗄️ Estrutura de Banco de Dados
+
+O projeto utiliza **SQLite**, com o arquivo de banco localizado em:
+
 ```
-```sql
-    tabela: colors
-        id      int not null auto_increment primary key
-        name    varchar(50) not null
-```
-```sql
-    tabela: user_colors
-        color_id  int
-        user_id   int
+database/db.sqlite
 ```
 
-##### Start
-Este projeto conta com uma base sqlite com alguns registros já inseridos. Para início das atividades, use como base o arquivo `index.php`, este é apenas um arquivo exemplo onde é aberta conexão com o banco de dados e lista os usuários em uma tabela.
+A base já contém:
 
-##### Pontos que serão levados em conta
-- Funcionalidade
-- Organização do código e projeto
-- Apresentação da interface (Poderá usar frameworks CSS como Bootstrap, Material, Foundation etc)
+* Estrutura das tabelas necessárias;
+* Alguns registros iniciais;
+* Exemplo de conexão.
 
-##### Dicas
-- Para utilizar o banco de dados contido na pasta `database/db.sqlite` é necessário que a sua instalação do php tenha a extensão do sqlite instalada e ativada
-- O Php possui um servidor embutido, você consegue dar start ao projeto abrindo o terminal de comando na pasta baixada e executando `php -S 0.0.0.0:7070` e em seguida abrir o navegador em `http://localhost:7070`
+---
 
-##### Boa Sorte
-Use seu conhecimento, consulte a documentação e o google, caso ainda houver dúvidas, nos pergunte :D. Boa sorte!
+## ⚙️ Regras de Negócio
+
+* 🚫 Um **usuário não pode ter cores repetidas**;
+* 🔒 Uma **cor não pode ser excluída** se estiver associada a algum usuário;
+* 📋 Na **listagem de usuários**, exibir:
+
+  * Quantidade de cores vinculadas;
+* 🎨 Na **listagem de cores**, exibir:
+
+  * Quantidade de usuários vinculados;
+* ✨ Cores **sem associação** com usuários devem ser facilmente localizadas na listagem.
+
+---
+
+## 💡 Funcionalidades Opcionais
+
+As funcionalidades abaixo não são obrigatórias, mas contarão pontos extras:
+
+* 🗓️ Relatório de cores vinculadas por período;
+* 🔐 Autenticação ou controle de sessão;
+* ✅ Cobertura de testes.
+
+---
+
+## 🧩 Critérios de Avaliação
+
+| Critério                 | Descrição                                              |
+| ------------------------ | -------------------------------------------------------|
+| ⚙️ Funcionalidade        | O CRUD de usuários e cores deve funcionar corretamente |
+| 🧱 Organização do código | Estrutura clara e modular                              |
+| 🧭 Padrão de projeto     | Aplicação de padrões de projeto                        |
+| 🖥️ Usabilidade           | Interface simples, funcional e intuitiva               |
+
+---
+
+## 📦 Requisitos da Entrega
+
+* Projeto **funcional** em **PHP puro** com **SQLite**;
+* Ao final deste README, adicione:
+
+  * 🧱 Decisões de arquitetura;
+  * 📜 Regras implementadas;
+  * ⚠️ Dificuldades enfrentadas.
+
+---
+
+## ▶️ Execução do Projeto
+
+Para iniciar o servidor embutido do PHP, execute:
+
+```bash
+php -S 0.0.0.0:7070
+```
+
+Depois, acesse no navegador:
+
+👉 [http://localhost:7070](http://localhost:7070)
+
+> **Importante:** Certifique-se de que a extensão **SQLite** está instalada e habilitada no seu PHP.
+
+---
+
+## 🍀 Boa Sorte!
+
+Use seu conhecimento, explore a documentação e busque soluções criativas.
+Mostre o melhor do seu **raciocínio lógico e domínio de PHP** 🚀
+
+---
